@@ -1,7 +1,12 @@
+void main() {
+  new Deck();
+}
+
 // a deck will have a list of card instances
 // List is almost like array
 class Deck {
-  List<Card> cards;
+  // declare a variable to reference something, but there's no initallization
+  List<Card> cards = [];
 
   Deck() {
     var ranks = [
@@ -23,7 +28,12 @@ class Deck {
     var suits = ['Diamonds', 'Hearts', 'Clubs', 'Spades'];
 
     for (var suit in suits) {
-      for (var rank in ranks) {}
+      for (var rank in ranks) {
+        var card = new Card(rank, suit);
+        // we can say this.card, but we don't have
+        // cards ends up being null because the variable initialization wasn't done
+        cards.add(card);
+      }
     }
   }
 }
@@ -32,4 +42,6 @@ class Deck {
 class Card {
   String suit;
   String rank;
+
+  Card(this.rank, this.suit);
 }
