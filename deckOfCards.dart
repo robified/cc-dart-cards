@@ -1,6 +1,8 @@
 void main() {
   var deck = new Deck();
   print(deck);
+  deck.shuffle();
+  print(deck);
 }
 
 // a deck will have a list of card instances
@@ -40,6 +42,10 @@ class Deck {
 
   toString() {
     return cards.toString();
+  }
+
+  shuffle() {
+    cards.shuffle();
   }
 }
 
