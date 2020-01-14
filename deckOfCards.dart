@@ -39,7 +39,7 @@ class Deck {
   }
 
   toString() {
-    return 'This is a deck!';
+    return cards.toString();
   }
 }
 
@@ -49,4 +49,8 @@ class Card {
   String rank;
 
   Card(this.rank, this.suit);
+
+  toString() {
+    return '$rank of $suit';
+  }
 }
