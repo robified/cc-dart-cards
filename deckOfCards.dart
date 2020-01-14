@@ -1,8 +1,11 @@
 void main() {
   var deck = new Deck();
-  print(deck);
-  deck.shuffle();
-  print(deck);
+//   print(deck);
+
+//   deck.shuffle();
+//   print(deck);
+
+  print(deck.cardsWithSuit('Diamonds'));
 }
 
 // a deck will have a list of card instances
@@ -46,6 +49,12 @@ class Deck {
 
   shuffle() {
     cards.shuffle();
+  }
+
+  cardsWithSuit(String suit) {
+    return cards.where((card) {
+      return card.suit == suit;
+    });
   }
 }
 
