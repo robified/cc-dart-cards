@@ -1,11 +1,19 @@
 void main() {
   var deck = new Deck();
-//   print(deck);
+  // print(deck);
 
-//   deck.shuffle();
-//   print(deck);
+  // deck.shuffle();
+  // print(deck);
 
-  print(deck.cardsWithSuit('Diamonds'));
+  // print(deck.cardsWithSuit('Diamonds'));
+
+  // print(deck);
+  // print(deck.deal(5));
+  // print(deck);
+
+  print(deck);
+  deck.removeCard('Diamonds', 'Ace');
+  print(deck);
 }
 
 // a deck will have a list of card instances
@@ -53,6 +61,16 @@ class Deck {
 
   cardsWithSuit(String suit) {
     return cards.where((card) => card.suit == suit);
+  }
+
+  deal(int handSize) {
+    var hand = cards.sublist(0, handSize);
+    cards = cards.sublist(handSize);
+    return hand;
+  }
+
+  removeCard(String suit, String rank) {
+    cards.removeWhere((card) => (card.suit == suit) && (card.rank == rank));
   }
 }
 
