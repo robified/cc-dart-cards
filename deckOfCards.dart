@@ -1,5 +1,6 @@
 void main() {
-  new Deck();
+  var deck = new Deck();
+  print(deck);
 }
 
 // a deck will have a list of card instances
@@ -35,6 +36,10 @@ class Deck {
         cards.add(card);
       }
     }
+  }
+
+  toString() {
+    return 'This is a deck!';
   }
 }
 
