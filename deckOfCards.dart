@@ -41,9 +41,9 @@ class Deck {
     ];
     var suits = ['Diamonds', 'Hearts', 'Clubs', 'Spades'];
 
-    for (var suit in suits) {
+    for (var mySuit in suits) {
       for (var rank in ranks) {
-        var card = new Card(rank: rank, suit: suit);
+        var card = new Card(rank: rank, suit: mySuit);
         // we can say this.card, but we don't have
         // cards ends up being null because the variable initialization wasn't done
         cards.add(card);
